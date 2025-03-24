@@ -2,7 +2,8 @@ console.log("Header script loaded!");
 
 document.addEventListener("DOMContentLoaded", async function () {
     try {
-        const response = await fetch("./header/header.html");
+        const path = window.location.pathname.includes("pages") ? "../" : "./";
+        const response = await fetch(`${path}header/header.html`);
         const data = await response.text();
         document.getElementById("header-container").innerHTML = data;
         loadHeaderContent();
