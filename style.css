@@ -1,0 +1,194 @@
+body{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    font-family: 'Roboto', sans-serif;  
+    font-weight: 300;
+}
+
+section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#slideshow-container{
+    width: 100%;
+    height: 200px;
+    margin-bottom: 2rem;
+}
+
+#slideshow-banner{
+    width: 100%;
+    height: 20rem;;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.banner-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.fade{
+    opacity:1;
+}
+
+.line-container{
+    margin-bottom: 3rem;
+}
+
+.line-1{
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    margin:auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border:2px solid rgb(189, 177, 108);
+    width: 90%;
+    height: 12rem;
+}
+
+.line-2{
+    margin: 0.1rem;
+    border:2px solid rgb(189, 177, 108);
+
+}
+
+.welcome-text-container{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    padding: 1rem;
+}
+
+#welcomeText{
+    font-size: 14px;
+}
+
+.opening-hours-container{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    margin:auto;
+    width: 15rem;
+    height: 15rem;
+    background-image: url('/assets/restaurant-img.jpg');
+    color: white;
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    color:white;
+    border-radius:50%;
+    margin-bottom:3rem;
+    padding:3rem;
+}
+
+.opening-hours-container ul{
+    text-align: center;
+    padding:0;
+    margin:0;
+    padding-bottom: 0.6rem;
+}
+
+.opening-hours-container ul li{
+    list-style-type: none;
+    padding-top:0.2rem;
+}
+
+.alternatives-container{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: hsl(41, 73%, 91%);
+    padding: 2rem;
+    margin-bottom: 5rem;
+}
+
+.alternatives-card{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    width: calc(40.33%);
+    padding: 0.3rem;
+    position: relative;
+    z-index: 1; 
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.alternatives-card::after{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0);
+    transition: background-color 0.3s ease-in-out;
+}
+
+.alternatives-card:hover::after{
+    background-color: rgba(226, 226, 226, 0.1);
+    
+}
+
+.alternatives-card:hover{
+    transform: scale(1.03); 
+}
+
+.alternatives-card img{
+    object-fit:cover;
+    height: 10rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 2px;
+}
+
+ #menuBtn, #bookingBtn{
+    background-color: rgb(189, 177, 108);
+    color:white;
+    border:none;
+    border-radius: 2px;
+    width: 100%;
+    padding: 0.8rem;
+    transition: background-color 0.3s ease;
+}
+
+#menuBtn:hover, #bookingBtn:hover{
+    background-color: rgb(189, 177, 95);
+}
+
+img#tasteLogo{
+    display:flex;
+    text-align: center;
+    align-items:center;
+    margin: auto;
+    width: 10rem;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .line-1{
+        height: 15rem;
+    }
+}

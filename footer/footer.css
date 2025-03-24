@@ -1,0 +1,37 @@
+.footer-container{
+    background-color: hsl(120, 26%, 18%);
+    color: rgb(189, 177, 108);
+    width: 100%;
+    padding-top: 3rem;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 12px;
+    padding-bottom: 3rem;
+}
+
+.open-hours ul{
+    padding:0;
+}
+
+.open-hours ul li {
+    list-style-type: none;
+    padding-left: 0;
+    margin-left:0;
+    padding-top:0.3rem;
+}
+
+footer label{
+    font-weight:bold;
+}
+
+#copyright{
+    text-align:center;
+    align-items: center;
+    font-size: 12px;
+    width:100%;
+    background-color: hsl(120, 26%, 18%);
+    color: rgb(189, 177, 108);
+    margin: 0;
+    padding-bottom:1.5rem;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taste</title>
+    <script src="/header/header.js" defer></script>
+    <script src="/footer/footer.js" defer></script>
+    <script src="/pages/pages-js/booking.js" defer></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
+    <link rel="stylesheet" href="../header/header.css">
+    <link rel="stylesheet" href="../footer/footer.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../pages/pages-css/booking.css">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body class="booking">
+
+    <div id="header-container"></div>
+
+    <div class="booking-container">
+        <h2 id="bookingHeader"> Boka bord </h2>
+        <p class="booking-text"> För att säkerställa att ni ska få en plats rekommenderar vi att ni bokar i god tid, särskilt under helger och högtider. Finns det allergier eller något annat vi behöver veta så lämna gärna en kommentar i bokningsformuläret så vi kan göra vistelsen så bra som möjligt för er. Vi ser fram emot att få ge er en fantastisk matupplevelse!</p>
+    
+        <form class="booking-form">
+            <label for="name">Namn:</label>
+            <input type="text" id="name" name="name" required>
+    
+            <label for="email">E-post:</label>
+            <input type="email" id="email" name="email" required>
+    
+            <label for="phone">Telefonnummer:</label>
+            <input type="tel" id="phone" name="phone" required>
+    
+            <label for="date">Välj datum:</label>
+            <input type="date" id="date" name="date" required>
+    
+            <div class="time-container">
+            </div>
+            <input type="hidden" id="selectedTime" name="selectedTime">
+    
+            <label for="guests">Antal gäster:</label>
+            <select id="guests" name="guests">
+                <option value="1">1 person</option>
+                <option value="2">2 personer</option>
+                <option value="3">3 personer</option>
+                <option value="4">4 personer</option>
+                <option value="5">5 personer</option>
+                <option value="6+">6+ personer</option>
+            </select>
+
+            <p class="booking-text">Skulle dina planer ändras ber vi dig att meddela oss så snart som möjligt, gärna minst 24 timmar i förväg. Vi tar även emot drop-in-gäster i mån av plats.Har du frågor eller behöver hjälp med din bokning? Tveka inte att höra av dig:</p>
+               
+            <p class="contact-text">Telefon: +46 123-456 789</p>
+            <p class="contact-text">E-post: info.taste@fakemail.se</p>
+    
+            <button type="submit">Boka bord</button>
+
+            <div class="booking-msg"></div>
+    
+            <img src="/assets/taste.png" alt="taste-logo" id="tasteLogo"/>
+                
+        </form>
+    </div>
+    
+
+    <div id="footer-container"></div>
+    
+</body>
+</html>
+
