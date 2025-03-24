@@ -1,7 +1,7 @@
 #bookingHeader{
     text-align: center;
     color: hsl(120, 26%, 18%);
-    background-image: url('/assets/restaurant-img.jpg');
+    background-image: url('assets/restaurant-img.jpg');
     color: white;
     background-size: cover; 
     background-position: center; 

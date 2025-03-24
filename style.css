@@ -89,7 +89,7 @@ section.show {
     margin:auto;
     width: 15rem;
     height: 15rem;
-    background-image: url('/assets/restaurant-img.jpg');
+    background-image: url('assets/restaurant-img.jpg');
     color: white;
     background-size: cover; 
     background-position: center; 
