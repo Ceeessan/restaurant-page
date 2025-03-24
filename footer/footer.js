@@ -2,7 +2,7 @@ console.log("Header script loaded!");
 
 document.addEventListener("DOMContentLoaded", async function () {
     try {
-        const response = await fetch("/footer/footer.html");
+        const response = await fetch("./footer/footer.html");
         const data = await response.text();
         document.getElementById("footer-container").innerHTML = data;
         loadHeaderContent();
