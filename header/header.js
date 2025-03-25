@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", async function () {
         const response = await fetch(`${path}header/header.html`);
         const data = await response.text();
         document.getElementById("header-container").innerHTML = data;
+        logoPath();
+        updateMenuPaths()
         loadHeaderContent();
 
     } catch (error) {
@@ -25,11 +27,39 @@ document.addEventListener("click", function toggleMenu() {
 })
 
 //Pathway so logo shows on every page
-document.addEventListener("DOMContentLoaded", function () {
-    const path = window.location.pathname.includes("pages") ? "../" : "./";
+function logoPath() {
+    const currentPath = window.location.pathname;
+    let path = "./";
 
-    const logo = document.getElementById("tasteLogoHeader");
-    if (logo) {
-        logo.src = path + "assets/taste.png";
+    if (currentPath.includes("pages")) {
+        path = "../";
     }
-});
+
+    const logo = document.querySelector("#tasteLogoHeader");
+    if (logo) {
+        logo.src = `${path}assets/taste.png`;
+    }
+}
+
+function updateMenuPaths() {
+    const currentPath = window.location.pathname;
+    let path = "./";
+
+    if (currentPath.includes("pages")) {
+        path = "../";
+    }
+
+    const menuLinks = document.querySelectorAll("#navMenu a");
+    menuLinks.forEach(link => {
+        const originalHref = link.getAttribute("href");
+
+        if (!originalHref.startsWith("http")) {
+            if (currentPath.includes("/pages/") && !originalHref.includes("pages/")) {
+                link.setAttribute("href", `../${originalHref}`);
+            } else if (!currentPath.includes("/pages/") && originalHref.includes("pages/")) {
+                link.setAttribute("href", `./${originalHref}`);
+            }
+        }
+    });
+}
+
