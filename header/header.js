@@ -24,3 +24,12 @@ document.addEventListener("click", function toggleMenu() {
     document.getElementById("navMenu").classList.toggle("show");
 })
 
+//Pathway so logo shows on every page
+document.addEventListener("DOMContentLoaded", function () {
+    const path = window.location.pathname.includes("pages") ? "../" : "./";
+
+    const logo = document.getElementById("tasteLogoHeader");
+    if (logo) {
+        logo.src = path + "assets/taste.png";
+    }
+});
