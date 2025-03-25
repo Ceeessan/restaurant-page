@@ -22,7 +22,7 @@
     height: 35rem;
     border: 2px solid  hsl(51, 38%, 50%);
     margin-bottom: 2rem;
-    background-image: url('../assets/restaurant-img.jpg');
+    background-image: url('/assets/restaurant-img.jpg');
     color: white;
     background-size: cover; 
     background-position: center; 
