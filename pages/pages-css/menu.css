@@ -3,8 +3,11 @@
     font-size: 24px;
     font-weight: bold;
     letter-spacing: 3px;
-    color: hsl(120, 26%, 18%);
-    margin-bottom: 1rem;
+    color: hsl(51, 38%, 50%);
+    padding-bottom: 1rem;
+    padding-top: 2rem;
+    background-color: rgb(35, 35, 35);
+    margin:0;
 }
 
 .menu-container {

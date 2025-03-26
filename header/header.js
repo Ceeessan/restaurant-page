@@ -43,21 +43,23 @@ function logoPath() {
 
 function updateMenuPaths() {
     const currentPath = window.location.pathname;
-    let path = "./";
+    const isInPages = currentPath.includes("/pages/");
 
     if (currentPath.includes("pages")) {
         path = "../";
     }
 
     const menuLinks = document.querySelectorAll("#navMenu a");
+
     menuLinks.forEach(link => {
-        const originalHref = link.getAttribute("href");
+        let originalHref = link.getAttribute("href");
 
         if (!originalHref.startsWith("http")) {
-            if (currentPath.includes("/pages/") && !originalHref.includes("pages/")) {
-                link.setAttribute("href", `../${originalHref}`);
-            } else if (!currentPath.includes("/pages/") && originalHref.includes("pages/")) {
-                link.setAttribute("href", `./${originalHref}`);
+            if (isInPages) {
+                link.setAttribute("href", `../${originalHref.replace("../", "")}`);
+            }
+            else {
+                link.setAttribute("href", `./${originalHref.replace("./", "")}`);
             }
         }
     });

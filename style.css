@@ -66,6 +66,7 @@ section.show {
 
 .line-2{
     margin: 0.1rem;
+    /* width: 100%; */
     border:2px solid rgb(189, 177, 108);
 
 }
