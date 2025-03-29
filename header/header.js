@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         updateMenuPaths()
         loadHeaderContent();
         attachMenuToggle();
-        updateHeaderPaths();
 
     } catch (error) {
         console.error("Fel vid inläsning av header", error)
@@ -22,15 +21,6 @@ function loadHeaderContent() {
     header.src = "../header/header.js";
     header.defer = true;
     document.body.appendChild(header);
-}
-
-function updateHeaderPaths() {
-    const currentPath = window.location.pathname;
-    let path = "./";
-
-    if (currentPath.includes("pages")) {
-        path = "../";
-    }
 }
 
 //Pathway so logo shows on every page
@@ -46,6 +36,9 @@ function logoPath() {
     if (logo) {
         logo.src = `${path}assets/taste.png`;
     }
+
+    const logoLink = document.querySelector("#tasteLohoHeader").parentElement;
+    logoLink.setAttribute("href", `${path}index.html`);
 }
 
 function updateMenuPaths() {
