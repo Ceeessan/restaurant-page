@@ -25,6 +25,18 @@ footer label{
     font-weight:bold;
 }
 
+.follow-container{
+    display:flex;
+    flex-direction:column;
+}
+
+.follow-container img{
+    padding-top:1rem;
+    color: rgb(189, 177, 108);
+    width: 1rem;
+    height: auto;
+}
+
 #copyright{
     text-align:center;
     align-items: center;
@@ -44,4 +56,11 @@ footer label{
         align-items: center;
         margin:auto;
     }
+
+    .follow-container img{
+        text-align:center;
+        align-items:center;
+        margin:auto;
+    }
+
 }
