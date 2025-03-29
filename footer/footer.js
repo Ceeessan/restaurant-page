@@ -19,3 +19,24 @@ function loadHeaderContent() {
     header.defer = true;
     document.body.appendChild(header);
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const currentPath = window.location.pathname;
+
+    let socialIconPath = "./assets/";
+
+    if (currentPath.includes("/pages/")) {
+        socialIconPath = "../assets/";
+    }
+
+    const linkedinIcon = document.getElementById("linkedinIcon");
+    const facebookIcon = document.getElementById("facebookIcon");
+
+    if (linkedinIcon) {
+        linkedinIcon.src = `${socialIconPath}linkedin.svg`;
+    }
+
+    if (facebookIcon) {
+        facebookIcon.src = `${socialIconPath}facebook.svg`;
+    }
+});
