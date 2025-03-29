@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         const data = await response.text();
         document.getElementById("footer-container").innerHTML = data;
         loadHeaderContent();
+        followLogoPath();
 
     } catch (error) {
         console.error("Fel vid inläsning av footer", error)
@@ -20,23 +21,25 @@ function loadHeaderContent() {
     document.body.appendChild(header);
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    const currentPath = window.location.pathname;
+function followLogoPath() {
+    document.addEventListener("DOMContentLoaded", function () {
+        const currentPath = window.location.pathname;
 
-    let socialIconPath = "./assets/";
+        let socialIconPath = "./assets/";
 
-    if (currentPath.includes("/pages/")) {
-        socialIconPath = "../assets/";
-    }
+        if (currentPath.includes("/pages/")) {
+            socialIconPath = "../assets/";
+        }
 
-    const linkedinIcon = document.getElementById("linkedinIcon");
-    const facebookIcon = document.getElementById("facebookIcon");
+        const linkedinIcon = document.getElementById("linkedinIcon");
+        const facebookIcon = document.getElementById("facebookIcon");
 
-    if (linkedinIcon) {
-        linkedinIcon.src = `${socialIconPath}linkedin.svg`;
-    }
+        if (linkedinIcon) {
+            linkedinIcon.src = `${socialIconPath}linkedin.svg`;
+        }
 
-    if (facebookIcon) {
-        facebookIcon.src = `${socialIconPath}facebook.svg`;
-    }
-});
+        if (facebookIcon) {
+            facebookIcon.src = `${socialIconPath}facebook.svg`;
+        }
+    });
+}
