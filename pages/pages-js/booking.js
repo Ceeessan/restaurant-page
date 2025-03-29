@@ -112,6 +112,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         bookingDiv.appendChild(bookingMsg);
 
-        bookingMsg.textContent = `Your booking at Taste for ${time} on ${date} is confirmed! We look forward to seeing you there!`;
+        bookingMsg.textContent = `Din bokning hos Taste är bokad den ${date} klockan ${time}! Vi ser fram emot att få träffa dig!`;
     })
 })
