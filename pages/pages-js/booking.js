@@ -30,7 +30,6 @@ flatpickr("#date", {
         if (selectedDay === 0 || selectedDay === 6) {
             selectDinnerInWeekendTime();
         }
-
     }
 });
 
@@ -114,7 +113,5 @@ document.addEventListener("DOMContentLoaded", function () {
         bookingDiv.appendChild(bookingMsg);
 
         bookingMsg.textContent = `Your booking at Taste for ${time} on ${date} is confirmed! We look forward to seeing you there!`;
-
-        console.log("Du har bokat!");
     })
 })

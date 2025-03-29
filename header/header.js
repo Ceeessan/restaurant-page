@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         updateMenuPaths()
         loadHeaderContent();
         attachMenuToggle();
+        updateHeaderPaths();
 
     } catch (error) {
         console.error("Fel vid inläsning av header", error)
@@ -21,6 +22,15 @@ function loadHeaderContent() {
     header.src = "../header/header.js";
     header.defer = true;
     document.body.appendChild(header);
+}
+
+function updateHeaderPaths() {
+    const currentPath = window.location.pathname;
+    let path = "./";
+
+    if (currentPath.includes("pages")) {
+        path = "../";
+    }
 }
 
 //Pathway so logo shows on every page
@@ -83,4 +93,3 @@ function attachMenuToggle() {
         }
     })
 }
-

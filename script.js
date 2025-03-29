@@ -1,4 +1,4 @@
-//Slide banner images
+//Slide banner for images
 let slideIndex = 0;
 showSlides();
 

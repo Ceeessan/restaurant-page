@@ -68,7 +68,6 @@ section.show {
     margin: 0.1rem;
     width: 100%;
     border:2px solid rgb(189, 177, 108);
-
 }
 
 .welcome-text-container{
@@ -150,8 +149,7 @@ section.show {
 }
 
 .alternatives-card:hover::after{
-    background-color: rgba(226, 226, 226, 0.1);
-    
+    background-color: rgba(226, 226, 226, 0.1); 
 }
 
 .alternatives-card:hover{
@@ -190,9 +188,7 @@ img#tasteLogo{
 }
 
 @media (max-width: 768px) {
-
     .line-1{
         height: 15rem;
     }
-
 }
