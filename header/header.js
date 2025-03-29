@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         updateMenuPaths()
         loadHeaderContent();
         attachMenuToggle();
+        logoLinkPath();
 
     } catch (error) {
         console.error("Fel vid inläsning av header", error)
@@ -22,6 +23,7 @@ function loadHeaderContent() {
     header.defer = true;
     document.body.appendChild(header);
 }
+
 
 //Pathway so logo shows on every page
 function logoPath() {
@@ -36,6 +38,23 @@ function logoPath() {
     if (logo) {
         logo.src = `${path}assets/taste.png`;
     }
+}
+
+function logoLinkPath() {
+    document.addEventListener("DOMContentLoaded", function () {
+        const currentPath = window.location.pathname;
+
+        let logoPath = "./assets/taste.png";
+
+        if (currentPath.includes("/pages/")) {
+            logoPath = "../assets/taste.png";
+        }
+
+        const logo = document.getElementById("tasteLogoHeader");
+        if (logo) {
+            logo.src = logoPath;
+        }
+    });
 }
 
 function updateMenuPaths() {
