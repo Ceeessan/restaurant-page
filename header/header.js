@@ -36,9 +36,6 @@ function logoPath() {
     if (logo) {
         logo.src = `${path}assets/taste.png`;
     }
-
-    const logoLink = document.querySelector("#tasteLohoHeader").parentElement;
-    logoLink.setAttribute("href", `${path}index.html`);
 }
 
 function updateMenuPaths() {
