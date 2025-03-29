@@ -35,3 +35,13 @@ footer label{
     margin: 0;
     padding-bottom:1.5rem;
 }
+
+@media (max-width: 768px) {
+    .footer-container{
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        margin:auto;
+    }
+}

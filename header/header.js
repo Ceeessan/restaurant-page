@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         logoPath();
         updateMenuPaths()
         loadHeaderContent();
+        attachMenuToggle();
 
     } catch (error) {
         console.error("Fel vid inläsning av header", error)
@@ -21,10 +22,6 @@ function loadHeaderContent() {
     header.defer = true;
     document.body.appendChild(header);
 }
-
-document.addEventListener("click", function toggleMenu() {
-    document.getElementById("navMenu").classList.toggle("show");
-})
 
 //Pathway so logo shows on every page
 function logoPath() {
@@ -63,5 +60,27 @@ function updateMenuPaths() {
             }
         }
     });
+}
+
+function attachMenuToggle() {
+    const toggleMenu = document.getElementById("hamburger");
+    const header = document.querySelector(".header-menu");
+
+    toggleMenu.addEventListener("click", function (event) {
+        event.stopPropagation();
+        if (header.style.display === "block") {
+            header.style.display = "none";
+        } else {
+            header.style.display = "block";
+        }
+        toggleMenu.classList.toggle("change");
+    });
+
+    document.addEventListener("click", function () {
+        if (!toggleMenu.contains(event.target) && !header.contains(event.target)) {
+            header.style.display = "none";
+            toggleMenu.classList.remove("change");
+        }
+    })
 }
 

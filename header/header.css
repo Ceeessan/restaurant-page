@@ -65,23 +65,45 @@ body.home .header-menu ul li.active::after {
 }
 
 @media (max-width: 768px) {
-    .header-menu{
-        display:none;
-        /* position: absolute; */
-        top: 6rem; 
-        left: 0;
-        width: 100%;
-        background-color: white;
-        flex-direction: column;
-        text-align: center;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
     .hamburger-menu{
         display:flex;
         flex-direction: column;
         padding-top: 1.5rem;
         padding-right: 1.2rem;
+        cursor: pointer;
+    }
+
+    .header-menu{
+        display:none;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        position:absolute;
+        top: 6rem; 
+        left: 0;
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .header-menu ul {
+        margin-top:0;
+        display:flex;
+        flex-direction: column;
+    }
+
+    .header-menu ul li{
+        margin:auto;
+        text-align:center;
+        align-items:center;
+        padding-top: 10px;
+    }
+
+    .header-menu ul li:hover::after {
+        margin:auto;
+        text-align:center;
+        align-items:center;
+        width: 100%; 
     }
 
     .bar1, .bar2, .bar3 {
@@ -102,8 +124,8 @@ body.home .header-menu ul li.active::after {
         transform: translate(0, -11px) rotate(45deg);
       }
 
-      .header-menu.show {
-        display: flex;
+      .header-menu.change {
+        display:flex;
         flex-direction: column;
     }
 }
